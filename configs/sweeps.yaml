@@ -1,0 +1,103 @@
+# Sweep definitions for every experiment.
+#
+# Each top-level key is an experiment name (matching experiments/expNN_*.py).
+# The "rows" list is enumerated 0..len-1; SLURM_ARRAY_TASK_ID picks one row.
+# The experiment script also receives a --seed; seeds are 0..n_seeds-1.
+
+exp01_budget_sweep:
+  n_seeds: 5
+  rows:
+    - {m: 8,  q: 4, W_min: 1, W_max: 8,   T_factor: 2.0, n_tables: 50, exhaustive: false}
+    - {m: 16, q: 4, W_min: 1, W_max: 16,  T_factor: 2.0, n_tables: 50, exhaustive: false}
+    - {m: 32, q: 4, W_min: 1, W_max: 32,  T_factor: 2.0, n_tables: 50, exhaustive: false}
+    - {m: 64, q: 4, W_min: 1, W_max: 64,  T_factor: 2.0, n_tables: 50, exhaustive: false}
+    - {m: 4,  q: 2, W_min: 1, W_max: 4,   T_factor: 2.0, n_tables: 0,  exhaustive: true}
+    - {m: 6,  q: 4, W_min: 1, W_max: 3,   T_factor: 2.0, n_tables: 0,  exhaustive: true}
+    - {m: 4,  q: 4, W_min: 1, W_max: 2,   T_factor: 2.0, n_tables: 0,  exhaustive: true}
+
+exp02_temperature_sweep:
+  n_seeds: 5
+  rows:
+    - {q: 4, L: 50,  T_grid: [0.3, 0.5, 0.7, 0.9, 1.0, 1.1, 1.3, 1.5, 1.8], n_tables: 50, table_mode: random}
+    - {q: 4, L: 100, T_grid: [0.3, 0.5, 0.7, 0.9, 1.0, 1.1, 1.3, 1.5, 1.8], n_tables: 50, table_mode: random}
+    - {q: 4, L: 500, T_grid: [0.3, 0.5, 0.7, 0.9, 1.0, 1.1, 1.3, 1.5, 1.8], n_tables: 50, table_mode: random}
+    - {q: 4, L: 100, T_grid: [0.3, 0.5, 0.7, 0.9, 1.0, 1.1, 1.3, 1.5, 1.8], n_tables: 1,  table_mode: adversarial}
+
+exp03_noise:
+  n_seeds: 5
+  rows:
+    - {q: 4, L: 100, T_factor: 1.01, eps_grid_n: 25, noise_mode: uniform, n_tables: 30}
+    - {q: 4, L: 100, T_factor: 1.10, eps_grid_n: 25, noise_mode: uniform, n_tables: 30}
+    - {q: 4, L: 100, T_factor: 1.50, eps_grid_n: 25, noise_mode: uniform, n_tables: 30}
+    - {q: 4, L: 100, T_factor: 1.01, eps_grid_n: 25, noise_mode: aligned, n_tables: 1}
+    - {q: 4, L: 100, T_factor: 1.10, eps_grid_n: 25, noise_mode: aligned, n_tables: 1}
+    - {q: 4, L: 100, T_factor: 1.50, eps_grid_n: 25, noise_mode: aligned, n_tables: 1}
+
+exp04_alphabet_heatmap:
+  n_seeds: 3
+  rows:
+    - {m_grid: [16, 32, 64, 128, 256], q_set: [2, 4, 8, 16],
+       eps_grid_n: 12, T_slack: 0.05, n_tables: 20}
+
+exp05_quantized_keys:
+  n_seeds: 5
+  rows:
+    - {q: 4, L: 100, d_grid: [2, 4, 6, 8], T_grid_n: 25,
+       codebook: lex,      n_tables: 20}
+    - {q: 4, L: 100, d_grid: [4, 6, 8],    T_grid_n: 25,
+       codebook: random,   n_tables: 20}
+    - {q: 4, L: 100, d_grid: [4, 6, 8],    T_grid_n: 25,
+       codebook: greedy,   n_tables: 20}
+    - {q: 4, L: 100, d_grid: [4, 6, 8],    T_grid_n: 25,
+       codebook: balanced, n_tables: 20}
+
+exp06_worst_case_margin:
+  n_seeds: 3
+  rows:
+    - {q: 2, L_grid: [10, 50, 100], T_grid_n: 30, eps_grid: [0.0, 0.1, 0.3]}
+    - {q: 4, L_grid: [10, 50, 100], T_grid_n: 30, eps_grid: [0.0, 0.1, 0.3, 0.5]}
+    - {q: 8, L_grid: [10, 50, 100], T_grid_n: 30, eps_grid: [0.0, 0.1, 0.2]}
+
+# Bumped T_grid_n from 40 to 200 to resolve transition width below 0.03.
+exp07_transition_sharpness:
+  n_seeds: 10
+  rows:
+    - {q: 4, L_grid: [16, 32, 64, 128, 256, 512], T_grid_n: 200, n_tables: 30}
+
+exp08_qk_gap:
+  n_seeds: 5
+  rows:
+    - {q: 2, L: 64,  d_grid: [6, 7, 8],  T_grid_n: 30, codebook: lex,    n_tables: 20}
+    - {q: 4, L: 100, d_grid: [4, 5, 6],  T_grid_n: 30, codebook: lex,    n_tables: 20}
+    - {q: 4, L: 100, d_grid: [4, 5, 6],  T_grid_n: 30, codebook: random, n_tables: 20}
+
+# Removed exp09 and exp10 from the paper but kept config rows so the
+# scripts still run; verdict.py emits INFO for both.
+exp09_multihead:
+  n_seeds: 5
+  rows:
+    - {q: 4, L: 100, H_grid: [1, 2, 4, 8], T_grid_n: 25, eps: 0.0,  n_tables: 30}
+    - {q: 4, L: 100, H_grid: [1, 2, 4, 8], T_grid_n: 25, eps: 0.2,  n_tables: 30}
+
+exp10_nonuniform_queries:
+  n_seeds: 5
+  rows:
+    - {q: 4, L: 100, T_grid_n: 25, skew_grid: [0.0, 0.5, 1.0, 1.5, 2.0], n_tables: 30}
+
+exp11_realistic_noise:
+  n_seeds: 5
+  rows:
+    - {q: 2,  L: 100, T_grid_n: 25, n_tables: 30}
+    - {q: 4,  L: 100, T_grid_n: 25, n_tables: 30}
+    - {q: 8,  L: 100, T_grid_n: 25, n_tables: 30}
+    - {q: 16, L: 100, T_grid_n: 25, n_tables: 30}
+
+# Strengthened: now trains a 2-layer Transformer with vector-valued slots,
+# then phase-quantizes each component. acc_float vs acc_quant tells you
+# how much fidelity survives quantization.
+exp12_toy_transformer:
+  n_seeds: 3
+  rows:
+    - {q: 4, L: 32,  d_value: 4,  d_model: 32, n_layers: 2, n_train: 8000, lr: 5e-3, quantize_after: true}
+    - {q: 4, L: 64,  d_value: 4,  d_model: 32, n_layers: 2, n_train: 8000, lr: 5e-3, quantize_after: true}
+    - {q: 4, L: 128, d_value: 8,  d_model: 64, n_layers: 2, n_train: 12000, lr: 3e-3, quantize_after: true}
