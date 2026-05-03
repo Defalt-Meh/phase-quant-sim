@@ -1,0 +1,27 @@
+==========================================================================
+PHASE-QUANTIZED TRANSFORMER SIMULATION VERDICT
+Aggregated from: /cta/users/mehmet.altunoren/phase-quant-sims/out
+==========================================================================
+
+exp    verdict description
+--------------------------------------------------------------------------
+exp01  PASS   m=8: below_thresh<1: True, at_thresh==1: True; m=16: below_thresh<1: True, at_thresh==1: True; m=32: below_thresh<1: True, at_thresh==1: True; m=64: below_thresh<1: True, at_thresh==1: True; exh m=4: W<L worst<1: True, W>=L worst==1: True; exh m=6: W<L worst<1: True, W>=L worst==1: True
+exp02  PASS   rand L=50: tf=0.90 OK; rand L=100: tf=0.90 OK; rand L=500: tf=0.70 OK; adv L=100: tf=1.10 OK
+exp03  PASS   uniform: ε_break/(π/q)=1.00; aligned: ε_break/(π/q)=0.92
+exp04  PASS   m=256, T(q)={2: np.float64(5.59), 4: np.float64(5.59), 8: np.float64(6.41), 16: np.float64(7.46)}
+exp05  PASS   lex: {4: 0.6666666666666666, 6: 0.6666666666666666, 8: 0.6666666666666666}; random: {4: 0.6666666666666666, 6: 0.5291666666666666, 8: 0.5291666666666667}; greedy: {4: 0.6208333333333333, 6: 0.39166666666666666, 8: 0.3}; balanced: {4: 0.6666666666666666, 6: 0.5291666666666666, 8: 0.34583333333333327}
+exp06  PASS   q=2,L=10,ε=0.00: tf=1.00; q=2,L=10,ε=0.10: tf=1.00; q=2,L=10,ε=0.30: tf=1.00; q=2,L=50,ε=0.00: tf=1.00; q=2,L=50,ε=0.10: tf=1.00
+exp07  PASS   widths={16: 0.127, 32: 0.105, 64: 0.116, 128: 0.116, 256: 0.111, 512: 0.122}
+exp08  PASS   q=2,L=64,d=6: T_lo=5.38<=6.25<=12.43=OK; q=2,L=64,d=7: T_lo=6.27<=7.29<=14.50=OK; q=2,L=64,d=8: T_lo=7.17<=8.33<=16.57=OK; q=4,L=100,d=4: T_lo=5.99<=13.49<=21.15=OK
+exp09  INFO   H=1: 1.000, H=8: 1.000, Δ=-0.000
+exp10  INFO   skew=0.0: tf_u=0.72, tf_w=0.72; skew=0.5: tf_u=0.72, tf_w=0.72; skew=1.0: tf_u=0.72, tf_w=0.72; skew=1.5: tf_u=0.72, tf_w=0.72; skew=2.0: tf_u=0.77, tf_w=0.77
+exp11  PASS   q=2,none: tf=0.75; q=2,rounding: tf=1.15; q=2,uniform: tf=1.00; q=4,none: tf=0.70; q=4,rounding: tf=1.10; q=4,uniform: tf=1.00
+exp12  PASS   acc_float=1.000, acc_quant=1.000, Δ=+0.000
+
+==========================================================================
+Legend:
+  PASS  = empirical result agrees with theorem prediction
+  FAIL  = empirical result CONTRADICTS theorem prediction
+  INFO  = qualitative observation (no formal prediction)
+  SKIP  = experiment not yet run / no data
+==========================================================================

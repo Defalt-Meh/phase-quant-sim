@@ -1,0 +1,10 @@
+
+[notice] A new release of pip is available: 24.3.1 -> 26.1
+[notice] To update, run: pip install --upgrade pip
+
+[notice] A new release of pip is available: 24.3.1 -> 26.1
+[notice] To update, run: pip install --upgrade pip
+  File "/cta/users/mehmet.altunoren/phase-quant-sims/scripts/verdict.py", line 192
+    if not (transition["greedy"][greedy_d] 
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?

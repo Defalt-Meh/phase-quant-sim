@@ -1,0 +1,432 @@
+================================
+PHASE_QUANT: full simulation pipeline
+Job ID     : 1212915
+Submit dir : /cta/users/mehmet.altunoren/phase-quant-sims
+Repo dir   : /cta/users/mehmet.altunoren/phase-quant-sims
+Venv path  : /cta/users/mehmet.altunoren/venv/bin/activate
+Start time : Sat May  2 20:00:45 +03 2026
+================================
+Cleaning broken pip state from: /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages
+Looking in links: /tmp/tmprluf_bku
+Requirement already satisfied: setuptools in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (82.0.1)
+Processing /tmp/tmprluf_bku/pip-24.0-py3-none-any.whl
+Installing collected packages: pip
+Successfully installed pip-24.0
+Collecting pip==24.3.1
+  Using cached pip-24.3.1-py3-none-any.whl.metadata (3.7 kB)
+Collecting setuptools
+  Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)
+Collecting wheel
+  Downloading wheel-0.47.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting packaging>=24.0 (from wheel)
+  Downloading packaging-26.2-py3-none-any.whl.metadata (3.5 kB)
+Using cached pip-24.3.1-py3-none-any.whl (1.8 MB)
+Using cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)
+Downloading wheel-0.47.0-py3-none-any.whl (32 kB)
+Downloading packaging-26.2-py3-none-any.whl (100 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.2/100.2 kB 1.7 MB/s eta 0:00:00
+Installing collected packages: setuptools, pip, packaging, wheel
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 82.0.1
+    Uninstalling setuptools-82.0.1:
+      Successfully uninstalled setuptools-82.0.1
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+  Attempting uninstall: packaging
+    Found existing installation: packaging 26.0
+    Uninstalling packaging-26.0:
+      Successfully uninstalled packaging-26.0
+  Attempting uninstall: wheel
+    Found existing installation: wheel 0.46.3
+    Uninstalling wheel-0.46.3:
+      Successfully uninstalled wheel-0.46.3
+Successfully installed packaging-26.2 pip-24.3.1 setuptools-82.0.1 wheel-0.47.0
+Requirement already satisfied: numpy>=1.26 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (2.4.1)
+Collecting scipy>=1.11
+  Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Requirement already satisfied: pandas>=2.0 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (2.3.3)
+Requirement already satisfied: pyarrow>=12.0 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (23.0.0)
+Requirement already satisfied: matplotlib>=3.8 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (3.10.8)
+Requirement already satisfied: pyyaml>=6.0 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (6.0.3)
+Requirement already satisfied: torch>=2.2 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (2.9.1)
+Requirement already satisfied: tqdm>=4.66 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (4.67.1)
+Requirement already satisfied: python-dateutil>=2.8.2 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from pandas>=2.0) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from pandas>=2.0) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from pandas>=2.0) (2025.3)
+Requirement already satisfied: contourpy>=1.0.1 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from matplotlib>=3.8) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from matplotlib>=3.8) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from matplotlib>=3.8) (4.62.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from matplotlib>=3.8) (1.5.0)
+Requirement already satisfied: packaging>=20.0 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from matplotlib>=3.8) (26.2)
+Requirement already satisfied: pillow>=8 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from matplotlib>=3.8) (12.1.1)
+Requirement already satisfied: pyparsing>=3 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from matplotlib>=3.8) (3.3.2)
+Requirement already satisfied: filelock in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (3.20.1)
+Requirement already satisfied: typing-extensions>=4.10.0 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (3.6.1)
+Requirement already satisfied: jinja2 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (2025.10.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (2.27.5)
+Requirement already satisfied: nvidia-nvshmem-cu12==3.3.20 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (3.3.20)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (1.13.1.3)
+Requirement already satisfied: triton==3.5.1 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from torch>=2.2) (3.5.1)
+Requirement already satisfied: six>=1.5 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas>=2.0) (1.17.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from sympy>=1.13.3->torch>=2.2) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages (from jinja2->torch>=2.2) (3.0.3)
+Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 3.8 MB/s eta 0:00:00
+Installing collected packages: scipy
+Successfully installed scipy-1.17.1
+================================
+Hostname : cn07
+Python   : /cta/users/mehmet.altunoren/venv/bin/python (Python 3.11.9)
+Repo     : /cta/users/mehmet.altunoren/phase-quant-sims
+================================
+Sat May  2 20:01:49 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX A5000               On  |   00000000:AF:00.0 Off |                  Off |
+| 30%   34C    P8             18W /  230W |       2MiB /  24564MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+==== Phase 1/3: Synthetic experiments (exp01-exp11) ====
+
+---- exp01_budget_sweep (7 rows x 5 seeds) [Sat May  2 20:01:49 +03 2026] ----
+[exp01] wrote 8 rows -> out/exp01/row00_seed00.parquet
+[exp01] wrote 8 rows -> out/exp01/row00_seed01.parquet
+[exp01] wrote 8 rows -> out/exp01/row00_seed02.parquet
+[exp01] wrote 8 rows -> out/exp01/row00_seed03.parquet
+[exp01] wrote 8 rows -> out/exp01/row00_seed04.parquet
+[exp01] wrote 16 rows -> out/exp01/row01_seed00.parquet
+[exp01] wrote 16 rows -> out/exp01/row01_seed01.parquet
+[exp01] wrote 16 rows -> out/exp01/row01_seed02.parquet
+[exp01] wrote 16 rows -> out/exp01/row01_seed03.parquet
+[exp01] wrote 16 rows -> out/exp01/row01_seed04.parquet
+[exp01] wrote 32 rows -> out/exp01/row02_seed00.parquet
+[exp01] wrote 32 rows -> out/exp01/row02_seed01.parquet
+[exp01] wrote 32 rows -> out/exp01/row02_seed02.parquet
+[exp01] wrote 32 rows -> out/exp01/row02_seed03.parquet
+[exp01] wrote 32 rows -> out/exp01/row02_seed04.parquet
+[exp01] wrote 64 rows -> out/exp01/row03_seed00.parquet
+[exp01] wrote 64 rows -> out/exp01/row03_seed01.parquet
+[exp01] wrote 64 rows -> out/exp01/row03_seed02.parquet
+[exp01] wrote 64 rows -> out/exp01/row03_seed03.parquet
+[exp01] wrote 64 rows -> out/exp01/row03_seed04.parquet
+[exp01] wrote 4 rows -> out/exp01/row04_seed00.parquet
+[exp01] wrote 4 rows -> out/exp01/row04_seed01.parquet
+[exp01] wrote 4 rows -> out/exp01/row04_seed02.parquet
+[exp01] wrote 4 rows -> out/exp01/row04_seed03.parquet
+[exp01] wrote 4 rows -> out/exp01/row04_seed04.parquet
+[exp01] wrote 3 rows -> out/exp01/row05_seed00.parquet
+[exp01] wrote 3 rows -> out/exp01/row05_seed01.parquet
+[exp01] wrote 3 rows -> out/exp01/row05_seed02.parquet
+[exp01] wrote 3 rows -> out/exp01/row05_seed03.parquet
+[exp01] wrote 3 rows -> out/exp01/row05_seed04.parquet
+[exp01] wrote 2 rows -> out/exp01/row06_seed00.parquet
+[exp01] wrote 2 rows -> out/exp01/row06_seed01.parquet
+[exp01] wrote 2 rows -> out/exp01/row06_seed02.parquet
+[exp01] wrote 2 rows -> out/exp01/row06_seed03.parquet
+[exp01] wrote 2 rows -> out/exp01/row06_seed04.parquet
+exp01_budget_sweep done in 141s
+
+---- exp02_temperature_sweep (4 rows x 5 seeds) [Sat May  2 20:04:11 +03 2026] ----
+[exp02] wrote 9 rows -> out/exp02/row00_seed00.parquet
+[exp02] wrote 9 rows -> out/exp02/row00_seed01.parquet
+[exp02] wrote 9 rows -> out/exp02/row00_seed02.parquet
+[exp02] wrote 9 rows -> out/exp02/row00_seed03.parquet
+[exp02] wrote 9 rows -> out/exp02/row00_seed04.parquet
+[exp02] wrote 9 rows -> out/exp02/row01_seed00.parquet
+[exp02] wrote 9 rows -> out/exp02/row01_seed01.parquet
+[exp02] wrote 9 rows -> out/exp02/row01_seed02.parquet
+[exp02] wrote 9 rows -> out/exp02/row01_seed03.parquet
+[exp02] wrote 9 rows -> out/exp02/row01_seed04.parquet
+[exp02] wrote 9 rows -> out/exp02/row02_seed00.parquet
+[exp02] wrote 9 rows -> out/exp02/row02_seed01.parquet
+[exp02] wrote 9 rows -> out/exp02/row02_seed02.parquet
+[exp02] wrote 9 rows -> out/exp02/row02_seed03.parquet
+[exp02] wrote 9 rows -> out/exp02/row02_seed04.parquet
+[exp02] wrote 9 rows -> out/exp02/row03_seed00.parquet
+[exp02] wrote 9 rows -> out/exp02/row03_seed01.parquet
+[exp02] wrote 9 rows -> out/exp02/row03_seed02.parquet
+[exp02] wrote 9 rows -> out/exp02/row03_seed03.parquet
+[exp02] wrote 9 rows -> out/exp02/row03_seed04.parquet
+exp02_temperature_sweep done in 137s
+
+---- exp03_noise (6 rows x 5 seeds) [Sat May  2 20:06:29 +03 2026] ----
+[exp03] wrote 25 rows -> out/exp03/row00_seed00.parquet
+[exp03] wrote 25 rows -> out/exp03/row00_seed01.parquet
+[exp03] wrote 25 rows -> out/exp03/row00_seed02.parquet
+[exp03] wrote 25 rows -> out/exp03/row00_seed03.parquet
+[exp03] wrote 25 rows -> out/exp03/row00_seed04.parquet
+[exp03] wrote 25 rows -> out/exp03/row01_seed00.parquet
+[exp03] wrote 25 rows -> out/exp03/row01_seed01.parquet
+[exp03] wrote 25 rows -> out/exp03/row01_seed02.parquet
+[exp03] wrote 25 rows -> out/exp03/row01_seed03.parquet
+[exp03] wrote 25 rows -> out/exp03/row01_seed04.parquet
+[exp03] wrote 25 rows -> out/exp03/row02_seed00.parquet
+[exp03] wrote 25 rows -> out/exp03/row02_seed01.parquet
+[exp03] wrote 25 rows -> out/exp03/row02_seed02.parquet
+[exp03] wrote 25 rows -> out/exp03/row02_seed03.parquet
+[exp03] wrote 25 rows -> out/exp03/row02_seed04.parquet
+[exp03] wrote 25 rows -> out/exp03/row03_seed00.parquet
+[exp03] wrote 25 rows -> out/exp03/row03_seed01.parquet
+[exp03] wrote 25 rows -> out/exp03/row03_seed02.parquet
+[exp03] wrote 25 rows -> out/exp03/row03_seed03.parquet
+[exp03] wrote 25 rows -> out/exp03/row03_seed04.parquet
+[exp03] wrote 25 rows -> out/exp03/row04_seed00.parquet
+[exp03] wrote 25 rows -> out/exp03/row04_seed01.parquet
+[exp03] wrote 25 rows -> out/exp03/row04_seed02.parquet
+[exp03] wrote 25 rows -> out/exp03/row04_seed03.parquet
+[exp03] wrote 25 rows -> out/exp03/row04_seed04.parquet
+[exp03] wrote 25 rows -> out/exp03/row05_seed00.parquet
+[exp03] wrote 25 rows -> out/exp03/row05_seed01.parquet
+[exp03] wrote 25 rows -> out/exp03/row05_seed02.parquet
+[exp03] wrote 25 rows -> out/exp03/row05_seed03.parquet
+[exp03] wrote 25 rows -> out/exp03/row05_seed04.parquet
+exp03_noise done in 244s
+
+---- exp04_alphabet_heatmap (1 rows x 3 seeds) [Sat May  2 20:10:34 +03 2026] ----
+[exp04] wrote 240 rows -> out/exp04/row00_seed00.parquet
+[exp04] wrote 240 rows -> out/exp04/row00_seed01.parquet
+[exp04] wrote 240 rows -> out/exp04/row00_seed02.parquet
+exp04_alphabet_heatmap done in 121s
+
+---- exp05_quantized_keys (4 rows x 5 seeds) [Sat May  2 20:12:36 +03 2026] ----
+[exp05] wrote 76 rows -> out/exp05/row00_seed00.parquet
+[exp05] wrote 76 rows -> out/exp05/row00_seed01.parquet
+[exp05] wrote 76 rows -> out/exp05/row00_seed02.parquet
+[exp05] wrote 76 rows -> out/exp05/row00_seed03.parquet
+[exp05] wrote 76 rows -> out/exp05/row00_seed04.parquet
+[exp05] wrote 75 rows -> out/exp05/row01_seed00.parquet
+[exp05] wrote 75 rows -> out/exp05/row01_seed01.parquet
+[exp05] wrote 75 rows -> out/exp05/row01_seed02.parquet
+[exp05] wrote 75 rows -> out/exp05/row01_seed03.parquet
+[exp05] wrote 75 rows -> out/exp05/row01_seed04.parquet
+[exp05] wrote 75 rows -> out/exp05/row02_seed00.parquet
+[exp05] wrote 75 rows -> out/exp05/row02_seed01.parquet
+[exp05] wrote 75 rows -> out/exp05/row02_seed02.parquet
+[exp05] wrote 75 rows -> out/exp05/row02_seed03.parquet
+[exp05] wrote 75 rows -> out/exp05/row02_seed04.parquet
+[exp05] wrote 75 rows -> out/exp05/row03_seed00.parquet
+[exp05] wrote 75 rows -> out/exp05/row03_seed01.parquet
+[exp05] wrote 75 rows -> out/exp05/row03_seed02.parquet
+[exp05] wrote 75 rows -> out/exp05/row03_seed03.parquet
+[exp05] wrote 75 rows -> out/exp05/row03_seed04.parquet
+exp05_quantized_keys done in 322s
+
+---- exp06_worst_case_margin (3 rows x 3 seeds) [Sat May  2 20:17:59 +03 2026] ----
+[exp06] wrote 270 rows -> out/exp06/row00_seed00.parquet
+[exp06] wrote 270 rows -> out/exp06/row00_seed01.parquet
+[exp06] wrote 270 rows -> out/exp06/row00_seed02.parquet
+[exp06] wrote 360 rows -> out/exp06/row01_seed00.parquet
+[exp06] wrote 360 rows -> out/exp06/row01_seed01.parquet
+[exp06] wrote 360 rows -> out/exp06/row01_seed02.parquet
+[exp06] wrote 270 rows -> out/exp06/row02_seed00.parquet
+[exp06] wrote 270 rows -> out/exp06/row02_seed01.parquet
+[exp06] wrote 270 rows -> out/exp06/row02_seed02.parquet
+exp06_worst_case_margin done in 153s
+
+---- exp07_transition_sharpness (1 rows x 10 seeds) [Sat May  2 20:20:33 +03 2026] ----
+[exp07] wrote 240 rows -> out/exp07/row00_seed00.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed01.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed02.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed03.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed04.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed05.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed06.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed07.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed08.parquet
+[exp07] wrote 240 rows -> out/exp07/row00_seed09.parquet
+exp07_transition_sharpness done in 1015s
+
+---- exp08_qk_gap (3 rows x 5 seeds) [Sat May  2 20:37:28 +03 2026] ----
+[exp08] wrote 90 rows -> out/exp08/row00_seed00.parquet
+[exp08] wrote 90 rows -> out/exp08/row00_seed01.parquet
+[exp08] wrote 90 rows -> out/exp08/row00_seed02.parquet
+[exp08] wrote 90 rows -> out/exp08/row00_seed03.parquet
+[exp08] wrote 90 rows -> out/exp08/row00_seed04.parquet
+[exp08] wrote 90 rows -> out/exp08/row01_seed00.parquet
+[exp08] wrote 90 rows -> out/exp08/row01_seed01.parquet
+[exp08] wrote 90 rows -> out/exp08/row01_seed02.parquet
+[exp08] wrote 90 rows -> out/exp08/row01_seed03.parquet
+[exp08] wrote 90 rows -> out/exp08/row01_seed04.parquet
+[exp08] wrote 90 rows -> out/exp08/row02_seed00.parquet
+[exp08] wrote 90 rows -> out/exp08/row02_seed01.parquet
+[exp08] wrote 90 rows -> out/exp08/row02_seed02.parquet
+[exp08] wrote 90 rows -> out/exp08/row02_seed03.parquet
+[exp08] wrote 90 rows -> out/exp08/row02_seed04.parquet
+exp08_qk_gap done in 253s
+
+---- exp09_multihead (2 rows x 5 seeds) [Sat May  2 20:41:41 +03 2026] ----
+[exp09] wrote 100 rows -> out/exp09/row00_seed00.parquet
+[exp09] wrote 100 rows -> out/exp09/row00_seed01.parquet
+[exp09] wrote 100 rows -> out/exp09/row00_seed02.parquet
+[exp09] wrote 100 rows -> out/exp09/row00_seed03.parquet
+[exp09] wrote 100 rows -> out/exp09/row00_seed04.parquet
+[exp09] wrote 100 rows -> out/exp09/row01_seed00.parquet
+[exp09] wrote 100 rows -> out/exp09/row01_seed01.parquet
+[exp09] wrote 100 rows -> out/exp09/row01_seed02.parquet
+[exp09] wrote 100 rows -> out/exp09/row01_seed03.parquet
+[exp09] wrote 100 rows -> out/exp09/row01_seed04.parquet
+exp09_multihead done in 1251s
+
+---- exp10_nonuniform_queries (1 rows x 5 seeds) [Sat May  2 21:02:32 +03 2026] ----
+[exp10] wrote 125 rows -> out/exp10/row00_seed00.parquet
+[exp10] wrote 125 rows -> out/exp10/row00_seed01.parquet
+[exp10] wrote 125 rows -> out/exp10/row00_seed02.parquet
+[exp10] wrote 125 rows -> out/exp10/row00_seed03.parquet
+[exp10] wrote 125 rows -> out/exp10/row00_seed04.parquet
+exp10_nonuniform_queries done in 130s
+
+---- exp11_realistic_noise (4 rows x 5 seeds) [Sat May  2 21:04:42 +03 2026] ----
+[exp11] wrote 75 rows -> out/exp11/row00_seed00.parquet
+[exp11] wrote 75 rows -> out/exp11/row00_seed01.parquet
+[exp11] wrote 75 rows -> out/exp11/row00_seed02.parquet
+[exp11] wrote 75 rows -> out/exp11/row00_seed03.parquet
+[exp11] wrote 75 rows -> out/exp11/row00_seed04.parquet
+[exp11] wrote 75 rows -> out/exp11/row01_seed00.parquet
+[exp11] wrote 75 rows -> out/exp11/row01_seed01.parquet
+[exp11] wrote 75 rows -> out/exp11/row01_seed02.parquet
+[exp11] wrote 75 rows -> out/exp11/row01_seed03.parquet
+[exp11] wrote 75 rows -> out/exp11/row01_seed04.parquet
+[exp11] wrote 75 rows -> out/exp11/row02_seed00.parquet
+[exp11] wrote 75 rows -> out/exp11/row02_seed01.parquet
+[exp11] wrote 75 rows -> out/exp11/row02_seed02.parquet
+[exp11] wrote 75 rows -> out/exp11/row02_seed03.parquet
+[exp11] wrote 75 rows -> out/exp11/row02_seed04.parquet
+[exp11] wrote 75 rows -> out/exp11/row03_seed00.parquet
+[exp11] wrote 75 rows -> out/exp11/row03_seed01.parquet
+[exp11] wrote 75 rows -> out/exp11/row03_seed02.parquet
+[exp11] wrote 75 rows -> out/exp11/row03_seed03.parquet
+[exp11] wrote 75 rows -> out/exp11/row03_seed04.parquet
+exp11_realistic_noise done in 768s
+Phase 1 done in 4541s
+
+==== Phase 2/3: Toy Transformer (exp12) ====
+
+---- exp12_toy_transformer (2 rows x 3 seeds) [Sat May  2 21:17:31 +03 2026] ----
+[exp12] wrote 1 rows -> out/exp12/row00_seed00.parquet
+[exp12] wrote 1 rows -> out/exp12/row00_seed01.parquet
+[exp12] wrote 1 rows -> out/exp12/row00_seed02.parquet
+[exp12] wrote 1 rows -> out/exp12/row01_seed00.parquet
+[exp12] wrote 1 rows -> out/exp12/row01_seed01.parquet
+[exp12] wrote 1 rows -> out/exp12/row01_seed02.parquet
+exp12_toy_transformer done in 219s
+Phase 2 done in 220s
+
+==== Phase 3/3: Plots and verdict ====
+[plots] figure1 written
+[plots] figure2 written
+[plots] figure3 written
+[plots] figure4 written
+[plots] figure5 written
+[plots] figure6 written
+[plots] figure7 written
+[plots] all figures in out/plots/
+==========================================================================
+PHASE-QUANTIZED TRANSFORMER SIMULATION VERDICT
+Aggregated from: /cta/users/mehmet.altunoren/phase-quant-sims/out
+==========================================================================
+
+exp    verdict description
+--------------------------------------------------------------------------
+exp01  FAIL   random transition at W/L=1: False; exhaustive impossibility holds: False
+exp02  FAIL   rand L=50: tf=0.90; rand L=100: tf=0.90; rand L=500: tf=0.70; adv L=100: tf=1.10
+exp03  PASS   uniform: ε_break/π/q=1.00; aligned: ε_break/π/q=0.92
+exp04  PASS   m=256, T(q)={2: np.float64(5.59), 4: np.float64(5.59), 8: np.float64(6.41), 16: np.float64(7.46)}
+exp05  PASS   lex: {4: 0.6666666666666666, 6: 0.6666666666666666, 8: 0.6666666666666666}; random: {4: 0.6666666666666666, 6: 0.5291666666666666, 8: 0.5291666666666667}; greedy: {4: 0.6208333333333333, 6: 0.39166666666666666, 8: 0.3}; balanced: {4: 0.6666666666666666, 6: 0.5291666666666666, 8: 0.34583333333333327}
+exp06  PASS   q=2,L=10,ε=0.00: tf=1.00; q=2,L=10,ε=0.10: tf=1.00; q=2,L=10,ε=0.30: tf=1.00; q=2,L=50,ε=0.00: tf=1.00; q=2,L=50,ε=0.10: tf=1.00
+exp07  PASS   widths={16: 0.14, 32: 0.14, 64: 0.14, 128: 0.14, 256: 0.14, 512: 0.14}
+exp08  PASS   q=2,L=64,d=6: T_lo=5.38<=6.25<=12.43=OK; q=2,L=64,d=7: T_lo=6.27<=7.29<=14.50=OK; q=2,L=64,d=8: T_lo=7.17<=8.33<=16.57=OK; q=4,L=100,d=4: T_lo=5.99<=13.49<=21.15=OK
+exp09  INFO   H=1: 1.000, H=8: 1.000, Δ=-0.000
+exp10  INFO   skew=0.0: tf_u=0.72, tf_w=0.72; skew=0.5: tf_u=0.72, tf_w=0.72; skew=1.0: tf_u=0.72, tf_w=0.72; skew=1.5: tf_u=0.72, tf_w=0.72; skew=2.0: tf_u=0.77, tf_w=0.77
+exp11  PASS   q=2,none: tf=0.75; q=2,rounding: tf=1.15; q=2,uniform: tf=1.00; q=4,none: tf=0.70; q=4,rounding: tf=1.10; q=4,uniform: tf=1.00
+exp12  PASS   acc_float=1.000, acc_quant=1.000
+
+==========================================================================
+Legend:
+  PASS  = empirical result agrees with theorem prediction
+  FAIL  = empirical result CONTRADICTS theorem prediction
+  INFO  = qualitative observation (no formal prediction)
+  SKIP  = experiment not yet run / no data
+==========================================================================
+
+[verdict] written to out/verdict.txt
+Phase 3 done in 13s
+
+================================
+ALL PHASES COMPLETE
+Total wall time: 4774s
+End time: Sat May  2 21:21:23 +03 2026
+
+Outputs:
+  Verdict : out/verdict.txt
+  Plots   : out/plots/
+  Logs    : out/logs/
+
+===== VERDICT =====
+==========================================================================
+PHASE-QUANTIZED TRANSFORMER SIMULATION VERDICT
+Aggregated from: /cta/users/mehmet.altunoren/phase-quant-sims/out
+==========================================================================
+
+exp    verdict description
+--------------------------------------------------------------------------
+exp01  FAIL   random transition at W/L=1: False; exhaustive impossibility holds: False
+exp02  FAIL   rand L=50: tf=0.90; rand L=100: tf=0.90; rand L=500: tf=0.70; adv L=100: tf=1.10
+exp03  PASS   uniform: ε_break/π/q=1.00; aligned: ε_break/π/q=0.92
+exp04  PASS   m=256, T(q)={2: np.float64(5.59), 4: np.float64(5.59), 8: np.float64(6.41), 16: np.float64(7.46)}
+exp05  PASS   lex: {4: 0.6666666666666666, 6: 0.6666666666666666, 8: 0.6666666666666666}; random: {4: 0.6666666666666666, 6: 0.5291666666666666, 8: 0.5291666666666667}; greedy: {4: 0.6208333333333333, 6: 0.39166666666666666, 8: 0.3}; balanced: {4: 0.6666666666666666, 6: 0.5291666666666666, 8: 0.34583333333333327}
+exp06  PASS   q=2,L=10,ε=0.00: tf=1.00; q=2,L=10,ε=0.10: tf=1.00; q=2,L=10,ε=0.30: tf=1.00; q=2,L=50,ε=0.00: tf=1.00; q=2,L=50,ε=0.10: tf=1.00
+exp07  PASS   widths={16: 0.14, 32: 0.14, 64: 0.14, 128: 0.14, 256: 0.14, 512: 0.14}
+exp08  PASS   q=2,L=64,d=6: T_lo=5.38<=6.25<=12.43=OK; q=2,L=64,d=7: T_lo=6.27<=7.29<=14.50=OK; q=2,L=64,d=8: T_lo=7.17<=8.33<=16.57=OK; q=4,L=100,d=4: T_lo=5.99<=13.49<=21.15=OK
+exp09  INFO   H=1: 1.000, H=8: 1.000, Δ=-0.000
+exp10  INFO   skew=0.0: tf_u=0.72, tf_w=0.72; skew=0.5: tf_u=0.72, tf_w=0.72; skew=1.0: tf_u=0.72, tf_w=0.72; skew=1.5: tf_u=0.72, tf_w=0.72; skew=2.0: tf_u=0.77, tf_w=0.77
+exp11  PASS   q=2,none: tf=0.75; q=2,rounding: tf=1.15; q=2,uniform: tf=1.00; q=4,none: tf=0.70; q=4,rounding: tf=1.10; q=4,uniform: tf=1.00
+exp12  PASS   acc_float=1.000, acc_quant=1.000
+
+==========================================================================
+Legend:
+  PASS  = empirical result agrees with theorem prediction
+  FAIL  = empirical result CONTRADICTS theorem prediction
+  INFO  = qualitative observation (no formal prediction)
+  SKIP  = experiment not yet run / no data
+=============================================================================================
+
+-rw-r--r-- 1 mehmet.altunoren users  71K May  2 21:21 out/plots/figure1_budget_temperature.png
+-rw-r--r-- 1 mehmet.altunoren users  50K May  2 21:21 out/plots/figure2_noise.png
+-rw-r--r-- 1 mehmet.altunoren users  31K May  2 21:21 out/plots/figure3_alphabet.png
+-rw-r--r-- 1 mehmet.altunoren users  34K May  2 21:21 out/plots/figure3b_alphabet_heatmap.png
+-rw-r--r-- 1 mehmet.altunoren users 102K May  2 21:21 out/plots/figure4_quantized_keys.png
+-rw-r--r-- 1 mehmet.altunoren users 133K May  2 21:21 out/plots/figure5_qk_gap.png
+-rw-r--r-- 1 mehmet.altunoren users  69K May  2 21:21 out/plots/figure6_sharpness.png
+-rw-r--r-- 1 mehmet.altunoren users 135K May  2 21:21 out/plots/figure7_realistic_noise.png
+================================

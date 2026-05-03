@@ -1,0 +1,12 @@
+    WARNING: Skipping /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages/pip-24.0.dist-info due to invalid metadata entry 'name'
+WARNING: Skipping /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages/pip-24.0.dist-info due to invalid metadata entry 'name'
+WARNING: Skipping /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages/pip-24.0.dist-info due to invalid metadata entry 'name'
+WARNING: Skipping /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages/pip-24.0.dist-info due to invalid metadata entry 'name'
+WARNING: Skipping /cta/users/mehmet.altunoren/venv/lib/python3.11/site-packages/pip-24.0.dist-info due to invalid metadata entry 'name'
+
+[notice] A new release of pip is available: 24.3.1 -> 26.1
+[notice] To update, run: pip install --upgrade pip
+
+[notice] A new release of pip is available: 24.0 -> 26.1
+[notice] To update, run: pip install --upgrade pip
+slurmstepd-cn05: error: *** JOB 1212917 ON cn05 CANCELLED AT 2026-05-02T20:02:46 ***

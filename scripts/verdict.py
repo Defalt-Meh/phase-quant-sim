@@ -189,7 +189,7 @@ def check_exp05() -> str:
         lex_d = max(transition["lex"].keys())
         greedy_d = max(transition["greedy"].keys())
         if greedy_d in transition["lex"]:
-            if not (transition["greedy"][greedy_d] <
+            if not (transition["greedy"][greedy_d] 
                     transition["lex"][greedy_d]):
                 ok = False
     return fmt("PASS" if ok else "INFO", "exp05", "; ".join(msgs))
